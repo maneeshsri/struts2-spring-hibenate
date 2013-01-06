@@ -17,7 +17,7 @@
             http://www.springframework.org/schema/context
             http://www.springframework.org/schema/context/spring-context-3.0.xsd">
               
-    <context:component-scan base-package="name.brucephillips.struts2springhibernateexample.dao" />
+    <context:component-scan base-package="com.maneeshsri.sample.dao" />
 
     <tx:annotation-driven />
 
@@ -49,12 +49,12 @@
         </property>
     </bean>
     
-    <bean name="userDao" class="name.brucephillips.struts2springhibernateexample.dao.UserDaoHibernate">
+    <bean name="jobDao" class="com.maneeshsri.sample.dao.JobDaoHibernate">
     	<property name="sessionFactory" ref="sessionFactory" />
     </bean>
     
-    <bean name="userService" class="name.brucephillips.struts2springhibernateexample.service.UserServiceImpl">
-    	<property name="userDao" ref="userDao" />
+    <bean name="jobService" class="com.maneeshsri.sample.service.JobServiceImpl">
+    	<property name="jobDao" ref="jobDao" />
     </bean>
 
     <bean id="transactionManager"

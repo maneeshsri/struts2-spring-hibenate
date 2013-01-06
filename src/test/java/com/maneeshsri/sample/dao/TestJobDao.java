@@ -31,11 +31,11 @@ public class TestJobDao {
 	@Test
 	public void testFindAll() {
 		
-		List<Job> users = userDao.findAll();
+		List<Job> jobs = userDao.findAll();
 		
-		logger.info("Number of users found in table is " + users.size() );
+		logger.info("Number of users found in table is " + jobs.size() );
 		
-		assertEquals("Number of users in table is not 10", 10, users.size() );
+		assertEquals("Number of users in table is not 6", 6, jobs.size() );
 		
 		
 	}

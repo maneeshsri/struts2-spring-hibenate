@@ -11,32 +11,13 @@
 	<package name="default" extends="struts-default" >	
 		
 		<action name="index" class="com.maneeshsri.sample.action.SearchJobAction" method="list">
-			<result name="success">/jsp/users.jsp</result>
+			<result name="success">/jsp/search.jsp</result>
 		</action>
 		
-	   <action name="addUserInput" class="com.maneeshsri.sample.action.SearchJobAction" method="input">
-			<result name="input">/jsp/userForm.jsp</result>
+	   <action name="search" class="com.maneeshsri.sample.action.SearchJobAction" method="search">
+			<result name="success">/jsp/search.jsp</result>
 		</action>
 		
-		<action name="addUserSave" class="com.maneeshsri.sample.action.SearchJobAction" method="save">
-			<result name="success" type="redirectAction">
-				<param name="actionName">index</param>
-			</result>
-			<result name="input">/jsp/userForm.jsp</result>
-		</action>
-		
-		<action name="editUserInput" class="com.maneeshsri.sample.action.SearchJobAction" method="input">
-			<result name="input">/jsp/userForm.jsp</result>
-		</action>
-		
-		<action name="deleteUser" class="com.maneeshsri.sample.action.SearchJobAction" method="delete">
-			<result name="success" type="redirectAction">
-				<param name="actionName">index</param>
-			</result>
-			<result name="input">/jsp/userForm.jsp</result>
-		</action>
-		
-
 	</package>
 
 

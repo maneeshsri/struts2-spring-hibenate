@@ -72,7 +72,7 @@ public interface JobDao {
 	  * @param jobFunction
 	  * @return
 	  */
-	 public List<Job> findByStateAndJobFunction(String state, String jobFunction);
+	 public List<Job> findByStateAndFunction(String state, String function);
 	 
 	 
 	

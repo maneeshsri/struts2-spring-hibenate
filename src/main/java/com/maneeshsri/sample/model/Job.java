@@ -1,9 +1,7 @@
 package com.maneeshsri.sample.model;
 
-import java.util.Calendar;
 import java.util.Date;
 
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,9 +9,6 @@ import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-import javax.persistence.Transient;
 
 
 /**
@@ -25,39 +20,14 @@ import javax.persistence.Transient;
 @Table(name="JOB")
 @NamedQueries({
 	    @NamedQuery(name="job.findAllStates", query="select distinct j.state from Job j"),
-        @NamedQuery(name="job.findAllJobFunctions", query="select distinct j.jobFunction from Job j"),
-        @NamedQuery(name="job.listJobsByStateFunction", query="from Job j where j.state=: state and j.jobFunction=: jobFunction")})
+        @NamedQuery(name="job.findAllFunctions", query="select distinct j.function from Job j")})
 public class Job {
 	
 	private Long id;
 	
-	private String password;
-	
-	private String loginname;
-	
-	private String encryptedPassword;
-	
-	private String emailAddress;
-	
-	private Boolean verified;
-	
-	private Date lastAccessTime;
-	
-	private Calendar registrationDate;
-	
-
-	@Column(name="login_name")
-	public String getLoginname() {
-		return loginname;
-	}
-
-	public void setLoginname(String loginname) {
-		this.loginname = loginname;
-	}
-
 	@Id
 	@GeneratedValue
-	@Column(name="id")
+	@Column(name="ID")
 	public Long getId() {
 		return id;
 	}
@@ -66,67 +36,103 @@ public class Job {
 		this.id = id;
 	}
 
-	@Column(name="password")
-	public String getPassword() {
-		return password;
+	
+	private String title;
+	
+	@Column(name="TITLE")
+	public String getTitle() {
+		return title;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	@Transient
-	public String getEncryptedPassword() {
-		return encryptedPassword;
-	}
-
-	public void setEncryptedPassword(String encryptedPassword) {
-		this.encryptedPassword = encryptedPassword;
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
 	
-	public String getEmailAddress() {
-		return emailAddress;
+	private String function;
+	
+	@Column(name="FUNCTION")
+	public String getFunction() {
+		return function;
 	}
 
-	public void setEmailAddress(String emailAddress) {
-		this.emailAddress = emailAddress;
+	public void setFunction(String function) {
+		this.function = function;
 	}
 
-	@Basic
-	public Boolean getVerified() {
-		return verified;
+	
+	private String state;
+	
+	@Column(name="STATE")
+	public String getState() {
+		return state;
 	}
 
-	public void setVerified(Boolean verified) {
-		this.verified = verified;
+	public void setState(String state) {
+		this.state = state;
 	}
 
-	@Temporal(TemporalType.TIMESTAMP)
-	public Date getLastAccessTime() {
-		return lastAccessTime;
+
+	private String country;
+	
+	@Column(name="COUNTRY")
+	public String getCountry() {
+		return country;
 	}
 
-	public void setLastAccessTime(Date lastAccessTime) {
-		this.lastAccessTime = lastAccessTime;
+	public void setCountry(String country) {
+		this.country = country;
 	}
 
-	@Temporal(TemporalType.DATE)
-	public Calendar getRegistrationDate() {
-		return registrationDate;
+	
+	private String description;
+	
+	@Column(name="DESCRIPTION")
+	public String getDescription() {
+		return description;
 	}
 
-	public void setRegistrationDate(Calendar registrationDate) {
-		this.registrationDate = registrationDate;
+	public void setDescription(String description) {
+		this.description = description;
 	}
+
+	
+	private Date postedDate;
+	
+	@Column(name="POSTED_DATE")
+	public Date getPostedDate() {
+		return postedDate;
+	}
+
+	public void setPostedDate(Date postedDate) {
+		this.postedDate = postedDate;
+	}
+
+
+	
+	
+	
+
+
+	
+	
+		
+	
+	
 	
 	public String toString() {
 		
-		String tmpStr = "[ID " + id + " | Login name " + loginname;
+		String tmpStr = "[ID " + id + " | FUNCTION " + function;
 		
-		tmpStr += " | password " + password;
+		tmpStr += " | TITLE " + title;
 		
-		tmpStr += " | email " + emailAddress + "]";
+		tmpStr += " | STATE " + state;
+		
+		tmpStr += " | DESCRIPTION " + description;
+		
+		tmpStr += " | POSTED_DATE " + postedDate;
+
+		tmpStr += " | COUNTRY " + country + "]";
 		
 		return tmpStr;
 		

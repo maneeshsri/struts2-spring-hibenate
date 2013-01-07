@@ -12,7 +12,6 @@ import com.maneeshsri.sample.model.Job;
 
 public interface JobService {
 	
-	
 	/**
 	 * 
 	 * @return
@@ -20,37 +19,11 @@ public interface JobService {
 	public List<Job> getAllJobs() ;
 	
 	
-	/**
-	 * 
-	 * @param job
-	 */
-	public void createJob(Job job);
-	
-	
-	/**
-	 * 
-	 * @return
-	 */
-	public int deleteAllJobs();
-
-	
-	/**
-	 * 
-	 * @param user
-	 */
-	public void updateJob(Job job);
-
-	/**
-	 * 
-	 * @param job
-	 */
-	public void deleteJob(Job job);
-
-	/**
-	 * 
-	 * @param id
-	 * @return
-	 */
 	public Job getJob(Long id);
-
+	
+	public List<String> getAllStates();
+	
+	public List<String> getAllFunctions();
+	
+	public List<Job> getJobsByStateFunction(String state, String function);
 }

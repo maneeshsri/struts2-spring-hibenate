@@ -25,41 +25,19 @@ public class JobServiceImpl implements JobService {
 		
 	}
 	
-	
-	public void createJob(Job Job) {
-		
-		jobDao.create(Job);
-		
+	public List<String> getAllStates(){
+		return jobDao.getAllStates();
 	}
 	
-	
-	public void deleteJob(Job Job) {
-		
-		jobDao.delete(Job);
-		
+	public List<String> getAllFunctions(){
+		return jobDao.getAllJobFunctions();
 	}
 	
-	
-	public int deleteAllJobs() {
-		
-		return jobDao.deleteAll();
-		
-	}
-	
-	
-	public void updateJob(Job Job) {
-		
-		jobDao.update(Job);
-		
+	public List<Job> getJobsByStateFunction(String state, String function){
+		return jobDao.findByStateAndFunction(String state, String function);
 	}
 
-	public JobDao getJobDao() {
-		return jobDao;
-	}
-
-	public void setJobDao(JobDao JobDao) {
-		this.jobDao = JobDao;
-	}
+	
 
 
 

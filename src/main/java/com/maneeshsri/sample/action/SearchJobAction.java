@@ -30,14 +30,14 @@ public class SearchJobAction extends ActionSupport
 
    
      public String landingPage(){
-        	List<String> stateList = jobService.get
-        	List<String> functionList = 
+        	List<String> stateList = jobService.getAllStates();
+        	List<String> functionList = jobService.getAllFunctions();
         	
         	return SUCCESS;
         }
         
         public String searchJob(Job job){
-        	
+        	List<Job> jobList = getJobsByStateFunction(job.getState(), job.getFunction())
         	return SUCCESS;
         }
         

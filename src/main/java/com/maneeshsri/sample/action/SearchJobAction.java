@@ -29,43 +29,18 @@ public class SearchJobAction extends ActionSupport
 
 
    
-    /**
-     * 
-     * @return
-     */
-    public String save()
-    {
-    	logger.debug("");
-    	return SUCCESS;
-    }
-
-    /**
-     * 
-     * @return
-     */
-    public String delete()
-    {
-    	
-    	
-        return SUCCESS;
-    }
-
-    /**
-     * 
-     * @return
-     */
-    public String list()
-    {
-        return SUCCESS;
-    }
-
-    @Override
-    public String input()
-    {
-    	
-        return INPUT;
-    }
-
+     public String landingPage(){
+        	List<String> stateList = jobService.get
+        	List<String> functionList = 
+        	
+        	return SUCCESS;
+        }
+        
+        public String searchJob(Job job){
+        	
+        	return SUCCESS;
+        }
+        
 	public JobService getJobService() {
 		return jobService;
 	}
@@ -78,7 +53,7 @@ public class SearchJobAction extends ActionSupport
 		return job;
 	}
 
-	public void setUser(Job job) {
+	public void setJob(Job job) {
 		this.job = job;
 	}
 
@@ -89,6 +64,5 @@ public class SearchJobAction extends ActionSupport
 	public void setJobs(List<Job> jobs) {
 		this.jobs = jobs;
 	}
-
  
 }

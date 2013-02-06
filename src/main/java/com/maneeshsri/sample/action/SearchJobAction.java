@@ -16,31 +16,28 @@ import com.opensymphony.xwork2.ActionSupport;
  *
  */
 
-public class SearchJobAction extends ActionSupport 
-{
-    /**
-     * 
-     */
-    private static final long serialVersionUID = 1L;
+public class SearchJobAction extends ActionSupport{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Log logger = LogFactory.getLog(this.getClass());
 	private JobService jobService ;
 	private Job job;
 	private List<Job> jobs;
 
+	public String landingPage(){
+		List<String> stateList = jobService.getAllStates();
+		List<String> functionList = jobService.getAllFunctions();
+		return SUCCESS;
+	}
 
-   
-     public String landingPage(){
-        	List<String> stateList = jobService.getAllStates();
-        	List<String> functionList = jobService.getAllFunctions();
-        	
-        	return SUCCESS;
-        }
-        
-        public String searchJob(Job job){
-        	List<Job> jobList = getJobsByStateFunction(job.getState(), job.getFunction())
-        	return SUCCESS;
-        }
-        
+	public String searchJob(Job job){
+		//TODO - To Add the method later 
+		//List<Job> jobList = getJobsByStateFunction(job.getState(), job.getFunction());
+		return SUCCESS;
+	}
+
 	public JobService getJobService() {
 		return jobService;
 	}
@@ -64,5 +61,5 @@ public class SearchJobAction extends ActionSupport
 	public void setJobs(List<Job> jobs) {
 		this.jobs = jobs;
 	}
- 
+
 }
